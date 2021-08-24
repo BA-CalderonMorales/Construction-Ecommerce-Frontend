@@ -1,6 +1,8 @@
 # Construction-Ecommerce-Frontend
 
-<h1>MERN + ASP.Net Core Entity Framework</h1>
+
+<h1>Status: Finished with interface a user should land on upon logging in. (8/23/21)</h1>
+<h2>MERN + ASP.Net Core Entity Framework</h2>
 <p>
 In creating this MERN/ASP.Net Core Entity Framework app, I'm combining the cloud service 
 capabilities that Mongo DB offers, along with the server side capabilities that I've created for 
@@ -63,7 +65,7 @@ paths/routes within a React + Redux setup in my web app ( so far ).
 
 <br><br>
 
-<h1>Mongo DB, Express (npm), React + Redux, NodeJS (npm) [MERN]</h1>
+<h2>Mongo DB, Express (npm), React + Redux, NodeJS (npm) [MERN]</h2>
 <ol>
     <li>
         Backend Server (folder within frontend app called 'server')<br>
@@ -117,7 +119,7 @@ paths/routes within a React + Redux setup in my web app ( so far ).
 
 <hr>
 
-<h1>MERN Notes:<h1>
+<h2>MERN Notes:<h2>
 <p>
 Make sure that you're server/routes/posts.js and client/api/index.js have the same looking <br>
 paths. For instance, both the following path names should match: 
@@ -139,3 +141,20 @@ export const likePost = (id) => axios.patch(`${url}/${id}/like`);
 Notice how the file paths are: [baseurl]/{id}/like
 This will cause a Network error if both are not the same.
 </p>
+
+<h1>Status: Start of Frontend Development (8/20/21) </h1>
+<p>Currently, the web app is working off of the tutorial series "Full Stack MERN Project - Build and Deploy an App | React + Redux, Node, Express, MongoDB" My 
+  goal is to use the tools that I learn from this tutorial series, along with what I've learned from my time at DevCodeCamp, to create a powerful, scalable 
+  web app for construction ecommerce businesses.
+</p>
+<br>
+<p>The reason I decided to use the YouTube video to help me start this project is because the creator is an active member of the GitHub community. He believes 
+  in open source development, and I really appreciate that mindset. As an aspiring software developer, I've always found myself thinking that I'm going to
+  create something that no one has ever seen before. More than 90% of the time, it's been built already (several times). So, that's where I'm at.
+</p>
+<br>
+<p>Once I finish with the project, I'll be deploying the versions of it via Netlify, and hopefully I can make something that's worth a second look! Here is the
+  YouTube series if you want to try it out for yourself. Shouts out to my man Adrian (JavaScript Mastery) for posting it: <br> 
+  https://www.youtube.com/playlist?list=PL6QREj8te1P7VSwhrMf3D3Xt4V6_SRkhu <br>
+</p>
+<img src="https://user-images.githubusercontent.com/62074841/130332942-466ef0b8-0a79-4be8-be9f-ab34eb1a9252.png" />
