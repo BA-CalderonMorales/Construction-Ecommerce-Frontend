@@ -1,8 +1,15 @@
 # Construction-Ecommerce-Frontend
 
-
-<h1>Status: Finished with interface a user should land on upon logging in. (8/23/21)</h1>
 <h2>MERN + ASP.Net Core Entity Framework</h2>
+
+<h3>Status: Finished setting up how a user will login or signup to the site.</h3>
+<p>
+I'm currently working on the ability for users to login with the database being hosted on 
+either Heroku or Azure. Will be posting another update as soon as more features are 
+finished.
+</p>
+
+<h3>Status: Finished with interface a user should land on upon logging in. (8/23/21)</h3>
 <p>
 In creating this MERN/ASP.Net Core Entity Framework app, I'm combining the cloud service 
 capabilities that Mongo DB offers, along with the server side capabilities that I've created for 
@@ -65,7 +72,7 @@ paths/routes within a React + Redux setup in my web app ( so far ).
 
 <br>
 
-<h2>Mongo DB, Express (npm), React + Redux, NodeJS (npm) [MERN]</h2>
+<h3>Mongo DB, Express (npm), React + Redux, NodeJS (npm) [MERN]</h3>
 <ol>
     <li>
         Backend Server (folder within frontend app called 'server')<br>
@@ -117,7 +124,7 @@ paths/routes within a React + Redux setup in my web app ( so far ).
 
 <hr>
 
-<h2>MERN Notes:</h2>
+<h3>MERN Notes:</h3>
 <p>
 Make sure that you're server/routes/posts.js and client/api/index.js have the same looking <br>
 paths. For instance, both the following path names should match: 
@@ -140,7 +147,7 @@ Notice how the file paths are: [baseurl]/{id}/like<br>
 This will cause a Network error if both are not the same.
 </p>
 
-<h1>Status: Start of Frontend Development (8/20/21) </h1>
+<h3>Status: Start of Frontend Development (8/20/21) </h3>
 <p>Currently, the web app is working off of the tutorial series "Full Stack MERN Project - Build and Deploy an App | React + Redux, Node, Express, MongoDB" My 
   goal is to use the tools that I learn from this tutorial series, along with what I've learned from my time at DevCodeCamp, to create a powerful, scalable 
   web app for construction ecommerce businesses.
