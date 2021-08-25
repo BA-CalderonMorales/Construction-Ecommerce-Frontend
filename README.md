@@ -10,7 +10,7 @@ using this application as a business owner. To start off, I created the backend 
 ASP.NET Core Entity Framework, and then I moved on to creating a frontend with MERN mindset.
 </p>
 
-<br><br>
+<br>
 
 <p>
 My plan is to incorporate the backend framework that I made within ASP.NET Core Entity Framework 
@@ -21,7 +21,7 @@ grateful for the open source community, especially since I did not want to reinv
 and create an ecommerce applicationfrom scratch.
 </p>
 
-<br><br>
+<br>
 
 <p>
 Although the tutorial series is meant to simplify creating a MERN web app, I found it empowering 
@@ -31,14 +31,14 @@ things set up the exact same way that I did. The series provides a template to w
 and this application is geared towards ecommerce within the construction community.
 </p>
 
-<br><br>
+<br>
 
 To run the app, at this present time (without deploying it using Netlify), you would have to do:
 <p>
     <ol>
         <li>Open the app in VS Code after cloning the repo to your local server.</li>
         <li>
-            Open up two terminals inside of VS Code:<br><br>
+            Open up two terminals inside of VS Code:<br>
             <ol>
                 <li>One is for your server.</li>
                 <li>'cd' into server folder by entering 'cd server'</li>
@@ -56,14 +56,14 @@ To run the app, at this present time (without deploying it using Netlify), you w
     </ol>
 </p>
 
-<br><br>
+<br>
 
 <p>
 That being said, here are some things that I want to annotate about the steps towards creating new
 paths/routes within a React + Redux setup in my web app ( so far ). 
 <p>
 
-<br><br>
+<br>
 
 <h2>Mongo DB, Express (npm), React + Redux, NodeJS (npm) [MERN]</h2>
 <ol>
@@ -115,11 +115,9 @@ paths/routes within a React + Redux setup in my web app ( so far ).
     </li>
 </ol>
 
-<br><br>
-
 <hr>
 
-<h2>MERN Notes:<h2>
+<h2>MERN Notes:</h2>
 <p>
 Make sure that you're server/routes/posts.js and client/api/index.js have the same looking <br>
 paths. For instance, both the following path names should match: 
@@ -138,7 +136,7 @@ export const likePost = (id) => axios.patch(`${url}/${id}/like`);
 <br>
 
 <p>
-Notice how the file paths are: [baseurl]/{id}/like
+Notice how the file paths are: [baseurl]/{id}/like<br>
 This will cause a Network error if both are not the same.
 </p>
 
