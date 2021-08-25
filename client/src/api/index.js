@@ -1,16 +1,22 @@
 import axios from 'axios';
 
-// This use to be http://https://localhost:5000/posts when I was still in development.
-const url = 'https://construction-ecommerce.herokuapp.com/posts';
+const API = axios.create({ baseURL: 'http://localhost:5000' });
 
-export const fetchPosts = () => axios.get(url); // FETCH_ALL
+API.interceptors.request.use((req) => {
+    
+    if (localStorage.getItem('profile')) { // If the item exists...
+        req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem('profile')).token}`;
+    }
 
-export const deletePost = (id) => axios.delete(`${url}/${id}`); // DELETE
+    return req;
+});
 
-export const createPost = (newPost) => axios.post(url, newPost); // CREATE
 
-export const likePost = (id) => axios.patch(`${url}/${id}/like`); // LIKE_POST
-
-export const dislikePost = (id) => axios.patch(`${url}/${id}/dislike`); // DISLIKE_POST
-
-export const updatePost = (id, updatedPost) => axios.patch(`${url}/${id}`, updatedPost); // UPDATE
+export const fetchPosts = () => API.get('/posts'); // FETCH_ALL
+export const createPost = (newPost) => API.post(`/posts`, newPost); // CREATE
+export const likePost = (id) => API.patch(`/posts/${id}/like`); // LIKE_POST
+export const dislikePost = (id) => API.patch(`/posts/${id}/dislike`); // DISLIKE_POST
+export const updatePost = (id, updatedPost) => API.patch(`/posts/${id}`, updatedPost); // UPDATE
+export const deletePost = (id) => API.delete(`/posts/${id}`); // DELETE
+export const signIn = (formData) => API.post(`user/signin`, formData); // SIGN IN
+export const signUp = (formData) => API.post(`user/signup`, formData); // SIGN UP

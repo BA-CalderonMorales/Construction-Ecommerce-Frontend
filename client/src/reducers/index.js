@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
 
-import posts from './posts'
+import posts from './posts';
+import auth from './auth';
 
 // Allows App.js to call posts via "state.posts"
-export const reducers = combineReducers({ posts });
+export const reducers = combineReducers({ posts, auth });
+

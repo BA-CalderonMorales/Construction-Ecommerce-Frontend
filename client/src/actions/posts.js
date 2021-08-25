@@ -1,9 +1,7 @@
 import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE, DISLIKE } from '../constants/actionTypes';
-
 import * as api from '../api/index.js';
 
 // Action Creators: functions that return actions.
-
 
 export const getPosts = () => async (dispatch) => {
     // An action is an object that has a type and payload.

@@ -1,7 +1,17 @@
 body {
     background-color: #CAD3C8;
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
     background-image: url('./images/Construction\ Worker_Isometric.svg');
     min-width: 380px;
+    height: 100vh;
+    -ms-overflow-style:none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
 }

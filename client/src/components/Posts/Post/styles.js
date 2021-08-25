@@ -25,7 +25,7 @@ export default makeStyles(() => ({
     },
     overlay: {
         position: 'absolute',
-        top: '8rem',
+        top: '1rem',
         left: '20px',
         color: 'white',
     },
