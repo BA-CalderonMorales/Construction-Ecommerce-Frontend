@@ -1,8 +1,8 @@
 body {
-    background-color: #CAD3C8;
-    background-position: center;
+    background-color: #006266;
+    background-position: bottom;
     background-repeat: no-repeat;
-    background-image: url('./images/Construction\ Worker_Isometric.svg');
+    background-image: url('./images/ConstructionSymbols.svg');
     min-width: 380px;
     height: 100vh;
     -ms-overflow-style:none;
@@ -11,7 +11,6 @@ body {
 ::-webkit-scrollbar {
     display: none;
 }
-
 ::-webkit-scrollbar-button {
     display: none;
 }

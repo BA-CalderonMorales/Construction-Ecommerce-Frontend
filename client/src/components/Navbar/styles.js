@@ -7,10 +7,10 @@ export default makeStyles((theme) => ({
       display: "flex",
       padding: "1rem 1rem 1rem 2rem",
       alignItems: "center",
-      borderRadius: "0rem 2rem 0rem 2rem",
+      borderRadius: "1rem 1rem 1rem 1rem",
       flexDirection: "row",
       justifyContent: "space-between",
-      backgroundColor: "#2C3A47",
+      backgroundColor: "#2f3640",
       minWidth: "348px"
     },
     auth: {
@@ -49,5 +49,6 @@ export default makeStyles((theme) => ({
     brandContainer: {
       display: 'flex',
       alignItems: 'center',
+      textDecoration: 'none'
     }
 }));

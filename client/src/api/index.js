@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'http://localhost:5000' });
+const API = axios.create({ baseURL: 'http://localhost:5000' }); // construction-ecommerce.netlify.app
 
 API.interceptors.request.use((req) => {
     
@@ -12,7 +12,8 @@ API.interceptors.request.use((req) => {
 });
 
 
-export const fetchPosts = () => API.get('/posts'); // FETCH_ALL
+export const fetchPosts = (page) => API.get(`/posts?page=${page}`); // FETCH_ALL
+export const fetchPostsBySearch = (searchQuery) => API.get(`/posts/search?searchQuery=${searchQuery.search || 'none'}&tags=${searchQuery.tags}`) // FETCH_BY_TAGS
 export const createPost = (newPost) => API.post(`/posts`, newPost); // CREATE
 export const likePost = (id) => API.patch(`/posts/${id}/like`); // LIKE_POST
 export const dislikePost = (id) => API.patch(`/posts/${id}/dislike`); // DISLIKE_POST
