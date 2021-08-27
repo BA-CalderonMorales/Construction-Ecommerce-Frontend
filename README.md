@@ -2,7 +2,14 @@
 
 <h2>MERN + ASP.Net Core Entity Framework</h2>
 
-<h3>Status: Optimized searching by title of project and searching by hashtags (8/26/21)</h3>
+<h3>Status: Allowed user to view different amounts of projects with material-ui/@lab pagination. (8/27/21) </h3>Status
+<p>
+Finished with pagination within a component. Moving on towards getting a view complete
+for whenever a user wants to look at more details behind a specific project. Once this is complete,
+I'll post an update with what I'm moving towards next.
+</p>
+
+<h3>Status: Optimized searching by title of project and searching by hashtags. (8/26/21)</h3>
 <p>
 I'll be moving on to optimizing pagination so that I can add additional pages that 
 are not correlated to the user landing page. Once I add the other pages that route 
