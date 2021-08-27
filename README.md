@@ -2,7 +2,14 @@
 
 <h2>MERN + ASP.Net Core Entity Framework</h2>
 
-<h3>Status: Finished setting up how a user will login or signup to the site.</h3>
+<h3>Status: Optimized searching by title of project and searching by hashtags (8/26/21)</h3>
+<p>
+I'll be moving on to optimizing pagination so that I can add additional pages that 
+are not correlated to the user landing page. Once I add the other pages that route 
+to the login page, I'll be moving towards smoothing out the pagination between different
+client views.
+</p>
+<h3>Status: Finished setting up how a user will login or signup to the site. (8/25/21)</h3>
 <p>
 I'm currently working on the ability for users to login with the database being hosted on 
 either Heroku or Azure. Will be posting another update as soon as more features are 
