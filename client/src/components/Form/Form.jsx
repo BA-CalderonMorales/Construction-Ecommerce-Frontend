@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import { createPost, updatePost } from '../../actions/posts';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import FileBase from 'react-file-base64';
 import useStyles from './styles';  
@@ -10,13 +11,16 @@ import useStyles from './styles';
 
 const Form = ({ currentId, setCurrentId }) => {    
     // Placeholder form data to fill and then post with new values.
-    const [postData, setPostData] = useState({ title: '', message: '', tags: '', selectedFile: '' });
-    const post = useSelector((state) => (currentId !== null) ? state.posts.find((message) => message._id === currentId) : null);
+    const [postData, setPostData] = useState({ title: '', message: '', tags: [], selectedFile: '' });
+    const post = useSelector((state) => currentId ? state.posts.posts.find((message) => message._id === currentId) : null);
     const dispatch = useDispatch();
     const classes = useStyles();
     const user = JSON.parse(localStorage.getItem('profile'));
 
     useEffect(() => {
+        if (!post?.title) {
+            clear();
+        }
         if (post) {
             setPostData(post);
         }
@@ -48,9 +52,10 @@ const Form = ({ currentId, setCurrentId }) => {
 
     if (!user?.result?.name) {
         return (
-            <Paper className={classes.paper}>
-                <Typography variant="h6" align="center">
-                    Please sign in to create your own project and like other projects.
+            <Paper className={classes.anonUser} elevation={6}>
+                <Typography variant="body2" align="center">
+                    If you sign in, you can post projects those you see now.
+                    <Button variant="contained" focusVisible color="secondary" component={Link} to="/auth">Sign in or Create an Account.</Button>
                 </Typography>
             </Paper>
         );

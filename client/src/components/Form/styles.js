@@ -7,6 +7,9 @@ export default makeStyles((theme) => ({
         backgroundColor: '#f1f2f6'
         },
     },
+    anonUser: {
+        padding: theme.spacing(2 ),
+    },
     paper: {
         padding: theme.spacing(0.5),
     },

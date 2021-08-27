@@ -7,6 +7,7 @@ import ThumbDownAltOutlined from '@material-ui/icons/ThumbDownAltOutlined';
 import DeleteIcon from '@material-ui/icons/Delete';
 import MoreHorizon from '@material-ui/icons/MoreHoriz';
 import moment from 'moment';
+import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { deletePost, likePost, dislikePost } from '../../../actions/posts';
 import useStyles from './styles.js';
@@ -15,6 +16,7 @@ const Post = ({ post, setCurrentId }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
     const user = JSON.parse(localStorage.getItem('profile'));
+    const history = useHistory();
 
     const Likes = () => {
         if (post.likes.length > 0) {
@@ -46,6 +48,11 @@ const Post = ({ post, setCurrentId }) => {
             );
         }
         return <><ThumbDownAltOutlined fontSize="small" />&nbsp;Dislike</>;
+    }
+
+    const Delete = (id) => {
+        dispatch(deletePost(post._id));
+        history.push('/');
     }
 
     return (  
@@ -89,7 +96,7 @@ const Post = ({ post, setCurrentId }) => {
                 {
                     (user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) 
                     && (
-                        <Button size="small" color="secondary" onClick={() => dispatch(deletePost(post._id))}>
+                        <Button size="small" color="secondary" onClick={() => Delete(post._id)}> 
                             <DeleteIcon fontSize="small" />
                         </Button>
                     )

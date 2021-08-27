@@ -7,6 +7,7 @@ import auth from '../middleware/auth.js';
 
 const router = express.Router();
 
+// All of these routes begin with /posts
 router.get('/search', getPostsBySearch); // Everyone
 router.get('/', getPosts); // FETCH_ALL - Everyone
 router.post('/', auth, createPost); // CREATE - Logged In

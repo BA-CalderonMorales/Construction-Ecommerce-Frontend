@@ -5,34 +5,34 @@ import PostMessage from '../models/postMessage.js';
 
 const router = express.Router();
 
-export const getPosts = async (req, res) => {    
-    const { pages } = req.query;
+export const getPosts = async (req, res) => {   
+    // Query -> /posts?page=1
+    const { page } = req.query; // Remember useQuery(); - just "page" page = "1", "2", "3", "4"...
     
     try {
         const LIMIT = 3;
-        const startIndex = ( Number(pages) - 1 ) * LIMIT // Get the starting index of every page.
+        const startIndex = ( Number(page) - 1 ) * LIMIT // Get the starting index of every page.
 
         const total = await PostMessage.countDocuments({});
         // Get the post from newest to oldest. Sort by id, limit them to 4 posts, skip everything until startIndex.
         const posts = await PostMessage.find().sort({ _id: -1 }).limit(LIMIT).skip(startIndex);
 
-        res.json({ data: posts, currentPage: Number(pages), numberOfPages: Math.ceil(total / LIMIT) });
+        res.status(200).json({ data: posts, currentPage: Number(page), numberOfPages: Math.ceil(total / LIMIT) });
     } catch (error) {
         res.status(404).json( { message:error.message } );
     }
 }
 
-// Query -> /posts?page=1 -> page = 1
-// Params -> /posts/123 -> id = 123
 
 export const getPostsBySearch = async (req, res) => {
+    // Query -> /posts/search?searchQuery=Project?tags=nice,project
     const { searchQuery, tags } = req.query;
-    
-    try {
-        const title = new RegExp(searchQuery, 'i');
-        // Find me all the posts that match one of the two criteria : title || is one of tags equal to one of the tags in db.
-        const posts = await PostMessage.find({ $or: [{ title }, { tags: { $in: tags.split(',') } }] });
 
+    try {
+        const title = new RegExp(searchQuery, 'i'); // i stands for ignore case.
+        // Find me all the posts that match one of the two criteria : title || is one of tags equal to one of the tags in db.
+        const posts = await PostMessage.find({ $or: [ { title }, { tags: { $in: tags.split(',') } } ]});
+        console.log(posts);
         res.json({ data: posts });
     } catch (error) {
         res.status(404).json({ message: error.message });

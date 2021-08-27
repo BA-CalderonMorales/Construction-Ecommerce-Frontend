@@ -1,5 +1,8 @@
-// User profile constants
+// Loading constants
+export const START_LOADING = 'START_LOADING';
+export const END_LOADING = 'END_LOADING';
 
+// User profile constants
 export const FETCH_ALL = 'FETCH_ALL';
 export const CREATE = 'CREATE';
 export const UPDATE = 'UPDATE';
