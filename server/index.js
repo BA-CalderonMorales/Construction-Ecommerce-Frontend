@@ -22,7 +22,7 @@ app.use('/posts', postRoutes);
 app.use('/user', userRoutes);
 
 app.get('/', (req, res) => {
-    res.send('Construction Ecommerce API');
+    res.send('Construction Ecommerce API - App Is Running');
 });
 
 const { PORT, CONNECTION_URL } = process.env;

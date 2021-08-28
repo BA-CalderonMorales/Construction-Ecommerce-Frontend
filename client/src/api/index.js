@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'http://localhost:5000' }); // construction-ecommerce.netlify.app
+// https://construction-ecommerce.herokuapp.com/ - When deployment ready
+// http://localhost:5000 - Server side development
+const API = axios.create({ baseURL: 'https://construction-ecommerce.herokuapp.com' }); // construction-ecommerce.netlify.app
 
 API.interceptors.request.use((req) => {
     
