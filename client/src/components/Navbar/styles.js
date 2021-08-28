@@ -1,54 +1,79 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { indigo } from '@material-ui/core/colors';
 
 export default makeStyles((theme) => ({
     appBar: {
-      margin: "0rem 0rem 1rem 0rem",
-      display: "flex",
-      padding: "1rem 1rem 1rem 2rem",
-      alignItems: "center",
-      borderRadius: "1rem 1rem 1rem 1rem",
-      flexDirection: "row",
-      justifyContent: "space-between",
-      backgroundColor: "#2f3640",
-      minWidth: "348px"
+      borderRadius: 15,
+      margin: '1rem 0',
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      padding: '1rem 0.5rem',
+      [theme.breakpoints.down('sm')]: {
+        flexDirection: 'column',
+      },
+      backgroundColor: "#826754",
     },
     auth: {
       textAlign: 'center'
     },
+    avatar: {
+      marginRight: '1rem'
+    },
     heading: {
-      color: 'whitesmoke',
-      textDecoration: 'none',
+      color: '#0e0306',
+      fontSize: 'x-large',
+      fontWeight: 400
     },
     image: {
-        position: 'relative',
+      marginLeft: '0.25rem',
+      marginTop: '.25rem',
+      marginBottom: '1rem'
     },
     toolbar: {
       display: 'flex',
       justifyContent: 'flex-end',
-      color: 'whitesmoke',
-      width: '400px',
-    },
-    [theme.breakpoints.down('sm')]: { // sm, xs, md, lg, xl for mobile queries.
-      // material ui has specific info in their documentation on this.
-      toolbar: {
-          width: '150px'
-      }
+      width: '30rem',
+      color: '#0e0306',
+      alignItems: 'center',
+      [theme.breakpoints.down('md')]: {
+        width: 'auto',
+        paddingRight: '1rem'
+      },
+      [theme.breakpoints.down('sm')]: {
+        width: 'auto',
+        flexWrap: 'wrap',
+        justifyContent: 'center'
+      },
     },
     profile: {
       display: 'flex',
       justifyContent: 'space-between',
-      width: '400px',
+      width: '20rem',
+      alignItems: 'center',
+      [theme.breakpoints.down('sm')]: {
+        width: 'auto',
+        marginTop: 20,
+        justifyContent: 'center',
+      },
+    },
+    brandContainer: {
+      padding: '.5rem .5rem',
+      display: 'flex',
+      alignItems: 'center',
+      textDecoration: 'none',
+      color: '#0e0306'
     },
     userName: {
       display: 'flex',
       alignItems: 'center',
-      paddingLeft: '1rem',
-      paddingRight: '1rem'
+      textAlign: 'center',
     },
-    brandContainer: {
-      display: 'flex',
-      alignItems: 'center',
-      textDecoration: 'none'
+    button: {
+      color: '#0e0306',
+      fontSize: '1.25rem',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '1rem'
+      },
     }
 }));

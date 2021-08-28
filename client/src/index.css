@@ -1,11 +1,9 @@
 body {
-    background-color: #006266;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-image: url('./images/ConstructionSymbols.svg');
-    min-width: 380px;
+    background-color: rgb(228, 228, 228); 
+    background-position: center center;
     height: 100vh;
     -ms-overflow-style:none;
+    overflow-x: hidden;    
 }
 
 ::-webkit-scrollbar {

@@ -2,8 +2,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles ((theme) => ({
     mainContainer: {
-        paddingLeft: "0rem",
-        paddingRight: "0rem",
         minWidth: "380px"
     },
     [theme.breakpoints.down('sm')]: { // sm, xs, md, lg, xl for mobile queries.

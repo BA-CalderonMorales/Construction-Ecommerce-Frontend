@@ -1,17 +1,22 @@
 import React from 'react';
 import Post from './Post/Post';
 import useStyles from './styles';  
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Grid, CircularProgress } from '@material-ui/core';
+import { getPosts } from '../../actions/posts';
+import { Redirect } from 'react-router-dom';
 
 const Posts = ({ setCurrentId, setUser }) => {
+    const dispatch = useDispatch();
     const classes = useStyles();
     // Inside of reducers, index.js, it is state.posts or state.isLoading, we destructure here to manipulate.
     const { posts, isLoading } = useSelector((state) => state.posts); // [] => { isLoading, numPages, posts: [] }
-    
 
     if (!posts.length && !isLoading) {
-        return 'No Posts';
+        dispatch(getPosts());
+        return (
+            <Redirect to="/posts" />
+        )
     } else {
         if (posts?.creator) {
             setUser(posts.creator);

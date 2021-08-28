@@ -24,8 +24,9 @@ const Paginate = ({ page }) => {
             classes={{ ul: classes.ul }}
             count={numberOfPages} // Depends on the number of posts we have.
             page={Number(page) || 1} // Current page the client is on.
-            variant="outlined"
             color="primary"
+            size="large"
+            shape="rounded"
             renderItem={(item) => (
                 <PaginationItem  {...item} component={Link} to={`/posts?page=${item.page}`} />
             )}

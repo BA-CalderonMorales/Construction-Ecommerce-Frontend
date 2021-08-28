@@ -1,12 +1,11 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-export default makeStyles(() => ({ 
+export default makeStyles({
     media: {
         height: 0,
         paddingTop: '56.25%',
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
         backgroundBlendMode: 'darken',
-        padding: '3rem'
     },
     border: {
         border: 'solid',
@@ -21,11 +20,11 @@ export default makeStyles(() => ({
         borderRadius: '15px',
         height: '100%',
         position: 'relative',
-        backgroundColor: '#f1f2f6'
+        backgroundColor: '#C7D9B7'
     },
     overlay: {
         position: 'absolute',
-        top: '1rem',
+        top: '20px',
         left: '20px',
         color: 'white',
     },
@@ -43,7 +42,7 @@ export default makeStyles(() => ({
         justifyContent: 'space-between',
         margin: '20px',
     },
-    title: {
+    title: {    
         padding: '0 16px',
     },
     cardActions: {
@@ -51,4 +50,8 @@ export default makeStyles(() => ({
         display: 'flex',
         justifyContent: 'space-between',
     },
-}));
+    cardAction: {
+        display: 'block',
+        textAlign: 'initial',
+    },
+});

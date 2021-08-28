@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import { createPost, updatePost } from '../../actions/posts';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import FileBase from 'react-file-base64';
 import useStyles from './styles';  
@@ -14,6 +14,7 @@ const Form = ({ currentId, setCurrentId }) => {
     const [postData, setPostData] = useState({ title: '', message: '', tags: [], selectedFile: '' });
     const post = useSelector((state) => currentId ? state.posts.posts.find((message) => message._id === currentId) : null);
     const dispatch = useDispatch();
+    const history = useHistory();
     const classes = useStyles();
     const user = JSON.parse(localStorage.getItem('profile'));
 
@@ -43,10 +44,12 @@ const Form = ({ currentId, setCurrentId }) => {
         if (currentId) {
             dispatch(updatePost(currentId, { ...postData, name: user?.result?.name }));
             clear();
+            history.push('/posts');
         }
         else {
             dispatch(createPost({ ...postData, name: user?.result?.name })); 
             clear(); // Then clear the form.
+            history.push('/posts');
         }
     }
 
@@ -54,8 +57,7 @@ const Form = ({ currentId, setCurrentId }) => {
         return (
             <Paper className={classes.anonUser} elevation={6}>
                 <Typography variant="body2" align="center">
-                    If you sign in, you can post projects those you see now.
-                    <Button variant="contained" focusVisible color="secondary" component={Link} to="/auth">Sign in or Create an Account.</Button>
+                    <Button variant="contained" focusVisible color="secondary" component={Link} to="/auth">Sign in to add your project</Button>
                 </Typography>
             </Paper>
         );
