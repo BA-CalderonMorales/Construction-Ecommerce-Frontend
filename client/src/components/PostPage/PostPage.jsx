@@ -1,5 +1,5 @@
 import React from 'react'
-import PostDetails from '../PostDetails/PostDetails';
+import PostDetails from '../postDetails/postDetails';
 
 const PostPage = ({ currentId, setCurrentId }) => {
     return (

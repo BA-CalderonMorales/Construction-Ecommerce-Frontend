@@ -1,79 +1,80 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
-    appBar: {
-      borderRadius: 15,
-      margin: '1rem 0',
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
+  navSection: {
+    backgroundColor: "#826754",
+  },
+  navBar: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignContent: 'center',
+    flexDirection: 'row',
+    backgroundColor: '#826754',
+    [theme.breakpoints.down('xs','sm')]: {
+      flexDirection: 'column',
       alignItems: 'center',
-      padding: '1rem 0.5rem',
-      [theme.breakpoints.down('sm')]: {
-        flexDirection: 'column',
-      },
-      backgroundColor: "#826754",
     },
-    auth: {
-      textAlign: 'center'
+  },
+  brandContainer: {
+    display: 'flex',
+    flex: '1',
+    justifyContent: 'flex-start',
+    flexDirection: 'column',
+    alignContent: 'center',
+    padding: '3rem',
+    textDecoration: 'none',
+    color: 'black',
+    backgroundColor: '#826754',
+    [theme.breakpoints.down('xs', 'sm')]: {
+      flexDirection: 'column',
+      paddingBottom: '1rem',
+      paddingTop: '1rem'
     },
-    avatar: {
-      marginRight: '1rem'
+  },
+  profile: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    width: '20rem',
+    alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      width: 'auto',
+      marginTop: 20,
+      justifyContent: 'center',
     },
-    heading: {
-      color: '#0e0306',
-      fontSize: 'x-large',
-      fontWeight: 400
-    },
-    image: {
-      marginLeft: '0.25rem',
-      marginTop: '.25rem',
-      marginBottom: '1rem'
-    },
-    toolbar: {
-      display: 'flex',
-      justifyContent: 'flex-end',
-      width: '30rem',
-      color: '#0e0306',
+  },
+  userName: {
+    display: 'flex',
+    alignItems: 'center',
+    textAlign: 'center',
+  },
+  heading: {
+    display: 'flex',
+    alignItems: 'center',
+    textAlign: 'center',
+  },
+  toolbar: {
+    display: 'flex',
+    flex: '2',
+    justifyContent: 'flex-end',
+    backgroundColor: '#826754',
+    color: '#0e0306',
+    [theme.breakpoints.down('md')]: {
       alignItems: 'center',
-      [theme.breakpoints.down('md')]: {
-        width: 'auto',
-        paddingRight: '1rem'
-      },
-      [theme.breakpoints.down('sm')]: {
-        width: 'auto',
-        flexWrap: 'wrap',
-        justifyContent: 'center'
-      },
+      width: 'auto',
+      padding: '.5rem'
     },
-    profile: {
-      display: 'flex',
-      justifyContent: 'space-between',
-      width: '20rem',
-      alignItems: 'center',
-      [theme.breakpoints.down('sm')]: {
-        width: 'auto',
-        marginTop: 20,
-        justifyContent: 'center',
-      },
+    [theme.breakpoints.down('sm')]: {
+      width: 'auto',
+      flexDirection: 'column',
+      flexWrap: 'wrap',
+      justifyContent: 'center'
     },
-    brandContainer: {
-      padding: '.5rem .5rem',
-      display: 'flex',
-      alignItems: 'center',
-      textDecoration: 'none',
-      color: '#0e0306'
-    },
-    userName: {
-      display: 'flex',
-      alignItems: 'center',
-      textAlign: 'center',
-    },
-    button: {
-      color: '#0e0306',
-      fontSize: '1.25rem',
-      [theme.breakpoints.down('sm')]: {
-        fontSize: '1rem'
-      },
-    }
+  },
+  auth: {
+    textAlign: 'center'
+  },
+  avatar: {
+    marginRight: '1rem'
+  },
 }));

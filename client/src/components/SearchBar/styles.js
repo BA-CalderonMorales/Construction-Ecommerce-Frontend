@@ -1,14 +1,14 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-export default makeStyles ((theme) => ({
-    pagination: {
-        borderRadius: 4,
-        marginBottom: '1rem',
-        padding: '16px',
+export default makeStyles((theme) => ({
+    searchBar: {
+        padding: '1rem'
     },
-    gridContainer: {
-        [theme.breakpoints.down('xs')]: {
-            flexDirection: 'column',
-        },
-    },
+    '& .MuiGrid-item': {
+        [theme.breakpoints.down('sm', 'md')]: {
+            alignItems: 'center',
+            alignContent: 'center',
+            justifyContent: 'center',
+        }
+    }
 }));

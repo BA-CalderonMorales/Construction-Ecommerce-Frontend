@@ -15,3 +15,6 @@ export const DISLIKE = 'DISLIKE';
 // Authentication constants
 export const AUTH = 'AUTH';
 export const LOGOUT = 'LOGOUT';
+
+// Contract constants
+export const CREATE_CONTRACT = 'CREATE_CONTRACT';

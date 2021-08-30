@@ -2,7 +2,11 @@ import axios from 'axios';
 
 // https://construction-ecommerce.herokuapp.com/ - When deployment ready
 // http://localhost:5000 - Server side development
-const API = axios.create({ baseURL: 'https://construction-ecommerce.herokuapp.com' }); // construction-ecommerce.netlify.app
+const API = axios.create({ baseURL: 'http://localhost:5000' }); // construction-ecommerce.netlify.app
+
+// ; charset=utf-8
+const ASP_API = axios.create({ baseURL: 'https://localhost:44394'}, { headers: { "Content-Type": "application/json" } }) // asp.net core local server
+
 
 API.interceptors.request.use((req) => {
     
@@ -31,3 +35,6 @@ export const deletePost = (id) => API.delete(`/posts/${id}`); // DELETE
 // /auth
 export const signIn = (formData) => API.post(`user/signin`, formData); // SIGN IN
 export const signUp = (formData) => API.post(`user/signup`, formData); // SIGN UP
+
+// /api/contracts
+export const createContract = (contract) => ASP_API.post('/api/contracts/contract', contract);

@@ -1,6 +1,6 @@
 import React from 'react'
-import Posts from '../Posts/Posts';
-import SearchBar from '../SearchBar/SearchBar';
+import Posts from '../posts/posts';
+import SearchBar from '../searchBar/searchBar';
 
 const SearchResults = ({ setCurrentId, setUser, handleKeyPress, search, setSearch, handleAdd, handleDelete, tags, searchPost, addAProject }) => {
 

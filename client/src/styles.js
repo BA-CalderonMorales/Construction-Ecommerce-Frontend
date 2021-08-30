@@ -1,6 +1,19 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles ((theme) => ({
+    root: {
+        padding: '0',
+        margin: '0',
+        fontFamily: "'DM Sans', sans-serif",
+        '& .MuiContainer-root': {
+            paddingLeft: 0,
+            paddingRight: 0
+        },
+        '& .MuiAppBar-root': {
+            padding: 1
+        },
+        
+    },
     mainContainer: {
         minWidth: "380px"
     },

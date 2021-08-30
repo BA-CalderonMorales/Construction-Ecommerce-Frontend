@@ -4,14 +4,14 @@ import { BrowserRouter as Router, useHistory, Switch, Route, Redirect } from 're
 import { useDispatch } from 'react-redux';
 import { getPostsBySearch } from './actions/postSearch';
 
-import Navbar from './components/Navbar/Navbar';
-import Home from './components/Home/Home';
-import PostDetails from './components/PostDetails/PostDetails';
-import Authentication from './components/Authentication/Authentication';
-import Project from './components/Project/Project';
-import PostPage from './components/PostPage/PostPage';
-import SearchResults from './components/SearchResults/SearchResults';
-import Landing from './components/Landing/Landing';
+import Navbar from './components/navbar/navbar';
+import Home from './components/home/home';
+import Authentication from './components/authentication/authentication';
+import Project from './components/project/project';
+import PostPage from './components/postPage/postPage';
+import SearchResults from './components/searchResults/searchResults';
+import ContactUs from './components/contact-us/contact-us';
+import ContractPage from './components/contractPage/contractPage';
 
 import useStyles from './styles.js';
 
@@ -32,7 +32,6 @@ const App = () => {
             return ( 
                 <Redirect to={`/postSearch/search?searchQuery=${search || 'none'}&tags=${tags.join(',')}`} />
             )
-            // history.push(`/postSearch/search?searchQuery=${search || 'none'}&tags=${tags.join(',')}`);
         } else {
             return ( 
                 <Redirect to="/posts" />
@@ -46,12 +45,6 @@ const App = () => {
             searchPost(); // 'search' will also get passed down to searchPost bc it's using useState.
         }
     }
-
-    const addAProject = () => {
-        return(
-            history.push(`/add`)
-        );
-    }
     
     const handleAdd = (tag) => setTags([ ...tags, tag ]);
 
@@ -62,7 +55,7 @@ const App = () => {
             <Container className={classes.root} maxWidth="xl">
                 <Navbar />
                 <Switch>
-                    <Route path="/" exact component={() => <Redirect to="/landing" />} />
+                    <Route path="/" exact component={() => <Redirect to="/contact-us" />} />
                     <Route path="/posts" render={() => 
                         <Home setCurrentId={setCurrentId} 
                             setUser={setUser} 
@@ -73,12 +66,13 @@ const App = () => {
                             handleDelete={handleDelete} 
                             tags={tags} 
                             searchPost={searchPost} 
-                            addAProject={addAProject} 
-                            />} />
+                        />} 
+                    />
                     <Route path="/postSearch/search" render={() => <SearchResults currentId={currentId} setCurrentId={setCurrentId} setUser={setUser} />} />
                     <Route path="/postDetails/:id" render={() => <PostPage currentId={currentId} setCurrentId={setCurrentId} />} />
                     <Route path="/auth" exact component={Authentication} />
-                    <Route path="/landing" exact component={Landing} />
+                    <Route path="/contact-us" exact component={ContactUs} />
+                    <Route path="/contract" render={() => <ContractPage currentId={currentId} setCurrentId={setCurrentId} />} />}
                     <Route path="/add" render={() => <Project currentId={currentId} setCurrentId={setCurrentId} />} />
                     <Route path="/edit/:id" render={() => <Project currentId={currentId} setCurrentId={setCurrentId} />} />
                 </Switch>

@@ -2,7 +2,17 @@
 
 <h2>MERN + ASP.Net Core Entity Framework</h2>
 
-<h3>Status: Allowed user to view different amounts of projects with material-ui/@lab pagination. (8/27/21) </h3>Status
+<h3>Status: Added features: Google Maps API and ASP.NET Core Entity Framework usability. (8/30/2021) </h3>
+<p>
+Was able to connect my frontend React.js project with the two backends: MongoDB and ASP.NET Core Entity Framework
+through Redux implementation of actions, reducers, and an api call to either server. Future implementations should
+account for an interface that makes an api call to either server, based off of an interface that can tell 
+what the user's credentials are; therefore, allowing them access to a specific backend server. For now, I'll 
+be moving on towards completing the Chat Engine feature for this web app as one of the final implementations for a 
+construction e-commerce application.
+</p>
+
+<h3>Status: Allowed user to view different amounts of projects with material-ui/@lab pagination. (8/27/21) </h3>
 <p>
 Finished with pagination within a component. Moving on towards getting a view complete
 for whenever a user wants to look at more details behind a specific project. Once this is complete,

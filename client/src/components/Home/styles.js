@@ -1,20 +1,19 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles ((theme) => ({
-    searchTerm: {
-        borderRadius: 10,
-        marginBottom: '1rem',
-        display: 'flex',
-        padding: '1rem',
+    root: {
+        '& .MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-12': {
+            textAlign: 'center'
+        }
     },
-    pagination: {
-        borderRadius: 4,
-        marginBottom: '1rem',
-        padding: '16px',
+    searchBar: {
+        margin: '2rem',
     },
     gridContainer: {
+        marginTop: '5rem',
+        marginBottom: '1rem',
         [theme.breakpoints.down('xs')]: {
-            flexDirection: 'column',
+            flexDirection: 'column-reverse',
         },
     },
 }));

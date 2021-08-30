@@ -2,29 +2,48 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
     root: {
+        '& .MuiFormControl-root': {
+            width: '100%',
+            margin: '3px'
+        },
+        '& .MuiContainer-root': {
+            display: 'flex',
+            justifyContent: 'center',
+            alignContent: 'center',
+        },
+        '& .MuiGrid-root': {
+            justifyContent: 'center',
+            alignContent: 'center',
+            textAlign: 'center',
+            padding: '0.5rem'
+        },
         '& .MuiTextField-root': {
-        margin: theme.spacing(1),
         backgroundColor: '#f1f2f6'
         },
     },
     anonUser: {
         padding: theme.spacing(2 ),
     },
-    paper: {
-        padding: theme.spacing(0.5),
-    },
-    form: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-    },
     fileInput: {
-        width: '95%',
-        margin: '6px 0',
-        
+        width: '100%'
+    },
+    chooseFile: {
+        width: '25%',
+        alignItems: 'start',
+        [theme.breakpoints.down('md', 'sm')]: {
+            width: '100%'
+        }
     },
     buttonSubmit: {
-        marginBottom: 10,
-        marginTop: 5
+        width: '100%',
+        [theme.breakpoints.down('md', 'sm')]: {
+            width: '100%'
+        }
+    }, 
+    buttonClear: {
+        width: '100%',
+        [theme.breakpoints.down('md', 'sm')]: {
+            width: '100%'
+        }
     }
 }));

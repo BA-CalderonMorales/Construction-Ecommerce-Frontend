@@ -15,9 +15,9 @@ const Recommendations = ({ recommendedPosts }) => {
         <>
             {recommendedPosts.length && (
                 <>
+                    <Divider />
                     <Grid item xs={12} sm={12} md={12} lg={12} >
-                        <Typography gutterBottom variant="h5">You might also like:</Typography>
-                        <Divider />
+                        <Typography variant="h5">You might also like:</Typography>
                     </Grid>
                     <Grid item xs={12} sm={12} md={12} lg={12} >
                         <div className={classes.section}>                    

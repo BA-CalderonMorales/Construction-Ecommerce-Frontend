@@ -2,9 +2,13 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
     section: {
-        borderRadius: '20px',
-        margin: '10px',
+        borderRadius: '3rem',
+        margin: '1rem',
         flex: 1,
+        display: 'flex',
+        [theme.breakpoints.down('xs', 'sm', 'md')]: {
+            justifyContent: 'center'
+        }
     },
     recommendedPosts: {
         display: 'flex',

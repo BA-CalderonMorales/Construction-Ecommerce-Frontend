@@ -13,6 +13,7 @@ export default makeStyles((theme) => ({
         flexWrap: 'wrap',
         width: '100%',
         justifyContent: 'center',
+        paddingBottom: '2rem',
         [theme.breakpoints.down('sm')]: {
             flexWrap: 'wrap',
             flexDirection: 'column',
@@ -25,8 +26,9 @@ export default makeStyles((theme) => ({
         flex: 1,
     },
     imageSection: {
-        width: '100%',
+        width: '50%',
         [theme.breakpoints.down('sm')]: {
+            width: '100%',
             marginLeft: 0,
         },
     },
@@ -41,7 +43,6 @@ export default makeStyles((theme) => ({
         justifyContent: 'center', 
         alignItems: 'center', 
         padding: '20px', 
-        borderRadius: '15px', 
         height: '39vh',
     },
     ul: {

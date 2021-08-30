@@ -1,4 +1,23 @@
-# Getting Started with Create React App
+## Build the project inside of Next.js scripts first.
+
+"dev": "next dev"
+"build": "next build && next export"
+"postbuild": "next-sitemap"
+
+## Then build the project inside of React.js scripts
+
+"start": "react-scripts start"
+"test": "react-scripts test"
+"eject": "react-scripts eject"
+"build": "react-scripts build"
+
+## Finally, push the site to your Heroku backend server (or backend host of choice).
+
+git add .
+git commit -am "Adding functionality to your site is fun when everyone can see it!"
+git push heroku master
+
+## The rest of this documentation comes from create-react-app boilerplate ReadMe (not Next.js)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

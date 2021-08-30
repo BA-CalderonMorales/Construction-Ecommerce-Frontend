@@ -1,5 +1,5 @@
 import React from 'react'
-import Form from '../Form/Form';
+import Form from '../form/form';
 
 const Project = ({ currentId, setCurrentId }) => {
     

@@ -5,7 +5,7 @@ import { useParams, useHistory, Link } from 'react-router-dom';
 import { getPostsBySearch } from '../../actions/postSearch';
 import { getPost } from '../../actions/postDetails';
 
-import RecommendedPosts from '../RecommendedPosts/Recommendations';
+import RecommendedPosts from '../recommendedPosts/recommendations';
 import moment from 'moment';
 import useStyles from './styles';
 import FileBase from 'react-file-base64';
@@ -47,7 +47,7 @@ const PostDetails = () => {
     const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
 
     return (  
-        <Paper style={{ padding: '20px', borderRadius: '15px' }} elevation={6}>
+        <Paper style={{ padding: '20px'}}>
             <div className={classes.card}>
                 <div className={classes.section}>
                     <Typography variant="h3" component="h2">{post.title}</Typography>
