@@ -29,7 +29,7 @@ const SearchBar = ({ handleKeyPress, search, setSearch, handleAdd, handleDelete,
                         variant="outlined"
                     />
                 </Grid>
-                <Grid item xs={6} sm={2} md={3} lg={2} className={classes.searchButton}>
+                <Grid item xs={12} sm={2} md={3} lg={2} className={classes.searchButton}>
                     <Button onClick={searchPost} focusVisible><i className="fas fa-search fa-2x"></i></Button>
                     <Button onClick={addProject} focusVisible>Add a Project</Button>
                 </Grid>

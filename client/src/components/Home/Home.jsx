@@ -11,7 +11,7 @@ function useQuery() {
     return new URLSearchParams(useLocation().search);
 }
 
-const Home = ({ setCurrentId, setUser, handleKeyPress, search, setSearch, handleAdd, handleDelete, tags, searchPost, addAProject }) => {
+const Home = ({ setCurrentId, setUser, handleKeyPress, search, setSearch, handleAdd, handleDelete, tags, searchPost }) => {
     const query = useQuery();
     const page = query.get('page') || 1; // Sent to Pagination as props.
     const searchQuery = query.get('searchQuery');

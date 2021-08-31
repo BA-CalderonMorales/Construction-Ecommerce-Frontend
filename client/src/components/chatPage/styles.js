@@ -6,12 +6,10 @@ export default makeStyles ((theme) => ({
             textAlign: 'center'
         }
     },
-    searchBar: {
-        margin: '2rem',
-    },
     gridContainer: {
-        marginTop: '5rem',
-        marginBottom: '1rem',
+        paddingTop: '5rem',
+        paddingBottom: '10rem',
+        alignContent: 'center',
         textAlign: 'center',
         [theme.breakpoints.down('xs')]: {
             flexDirection: 'column-reverse',

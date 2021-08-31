@@ -1,14 +1,14 @@
 ## Build the project inside of Next.js scripts first.
 
-"dev": "next dev"
-"build": "next build && next export"
+"dev": "next dev",
+"build": "next build && next export",
 "postbuild": "next-sitemap"
 
 ## Then build the project inside of React.js scripts
 
-"start": "react-scripts start"
-"test": "react-scripts test"
-"eject": "react-scripts eject"
+"start": "react-scripts start",
+"test": "react-scripts test",
+"eject": "react-scripts eject",
 "build": "react-scripts build"
 
 ## Finally, push the site to your Heroku backend server (or backend host of choice).

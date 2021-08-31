@@ -4,6 +4,7 @@ import useStyle from './styles.js';
 import emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useHistory } from 'react-router-dom';
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -36,6 +37,7 @@ const SendAgain = () => {
 }
 
 const ContactUs = () => {
+    const history = useHistory();
     const SERVICE_ID = "service_nfoek1q";
     const TEMPLATE_ID = "template_19dcnn5";
     const USER_ID = "user_JpUTsDg4jWeu1DG3BXoSW";
@@ -52,26 +54,29 @@ const ContactUs = () => {
     }
 
     const sendEmail = (e) => {
-    
-    e.preventDefault();
+        e.preventDefault();
 
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID)
-        .then((result) => {
-                console.log(result)
-        }, (error) => {
-            return (
-                console.log(error)
-            );
-        });
-        e.target.reset();
-        setValues({
-            ...values, 
-            to_name: 'mcllc402@gmail.com',
-            from_name: '', // Name of Customer
-            message: '', // Message from Customer
-            reply_to: '' // Customer Email
-        })
-        showResult(true);
+        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID)
+            .then((result) => {
+                    console.log(result)
+            }, (error) => {
+                return (
+                    console.log(error)
+                );
+            });
+            e.target.reset();
+            setValues({
+                ...values, 
+                to_name: 'mcllc402@gmail.com',
+                from_name: '', // Name of Customer
+                message: '', // Message from Customer
+                reply_to: '' // Customer Email
+            })
+            showResult(true);
+    }
+
+    const sendToChat = () => {
+        history.push('/chat');
     }
 
     return (
@@ -96,6 +101,7 @@ const ContactUs = () => {
                                 <InputLabel>Message</InputLabel>
                                 <TextField onChange={handleChange} variant="outlined" name="message" label="Message" value={values.message} multiline rows={5}></TextField>
                                 <Button type="submit" variant="contained" color="primary">Send Email</Button>
+                                <Button type="button" variant="contained" color="secondary" onClick={sendToChat}>Can't Wait?</Button>
                             </Grid>
                         </Grid>
                     </form>

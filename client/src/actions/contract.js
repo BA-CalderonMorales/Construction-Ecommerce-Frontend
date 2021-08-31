@@ -7,7 +7,7 @@ export const createContract = (contract) => async (dispatch) => {
     try {
         dispatch({type: START_LOADING });
 
-        console.log(contract.customerPriceProposal);
+        // console.log(contract.customerPriceProposal);
 
         contract.customerPriceProposal = Number(contract.customerPriceProposal);
         

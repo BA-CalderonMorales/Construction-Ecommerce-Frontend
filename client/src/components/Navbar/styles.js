@@ -24,7 +24,7 @@ export default makeStyles((theme) => ({
     alignContent: 'center',
     padding: '3rem',
     textDecoration: 'none',
-    color: 'black',
+    color: 'whitesmoke',
     backgroundColor: '#826754',
     [theme.breakpoints.down('xs', 'sm')]: {
       flexDirection: 'column',
@@ -58,7 +58,6 @@ export default makeStyles((theme) => ({
     flex: '2',
     justifyContent: 'flex-end',
     backgroundColor: '#826754',
-    color: '#0e0306',
     [theme.breakpoints.down('md')]: {
       alignItems: 'center',
       width: 'auto',
@@ -77,4 +76,7 @@ export default makeStyles((theme) => ({
   avatar: {
     marginRight: '1rem'
   },
+  button: {
+    color: 'whitesmoke'
+  }
 }));

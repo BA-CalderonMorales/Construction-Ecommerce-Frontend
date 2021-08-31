@@ -54,8 +54,8 @@ const ContractProposal = () => {
     const getLocation = () => {
         setClicked(!clicked);
     }
-    const workType = "Plumbing, Framing, Remodeling, Concrete..."
-    const message = "Please provide us a detailed description."
+    const workType = "Plumbing, Framing, Concrete..."
+    const message = "Please provide a detailed description."
     const priceProposal = "(i.e. 30, 200, 5, no '$' symbols)"
     const locationText = "Press \"Get Location\" to help.";
     
