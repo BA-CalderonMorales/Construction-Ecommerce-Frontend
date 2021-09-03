@@ -2,6 +2,14 @@
 
 <h2>MERN + ASP.Net Core Entity Framework</h2>
 
+<h3>Status: I'll be posting snippets of the final product as soon as I get done with my Demo day. (9/3/2021) </h3>
+<p>
+If you're just browsing my code, just know that this is one of those projects that I placed my blood, sweat, and 
+tears on. I'm going to be show-casing this project on the 9th of this month at a TechHire event hosted by 
+DevCodeCamp where I'll be the first to present their capstone project. I'm super proud of the work I did on 
+this and hopefully this project helps other creators out there in the open source community.
+</p>
+
 <h3>Status: Added features: Google Maps API and ASP.NET Core Entity Framework usability. (8/30/2021) </h3>
 <p>
 Was able to connect my frontend React.js project with the two backends: MongoDB and ASP.NET Core Entity Framework
