@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container } from '@material-ui/core';
 import { BrowserRouter as Router, useHistory, Switch, Route, Redirect } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { getPostsBySearch } from './actions/postSearch';
+import { getContracts } from './actions/contract';
 import { AuthProvider } from './context/AuthContext';
 
 import Navbar from './components/navbar/navbar';
@@ -15,6 +16,9 @@ import ContactUs from './components/contact-us/contact-us';
 import ContractPage from './components/contractPage/contractPage';
 import ChatPage from './components/chatPage/chatPage';
 import ChatRoom from './components/chatRoom/chatRoom';
+import AdminLanding from './components/admin-landing/admin-landing';
+import AdminContracts from './components/admin-contracts/admin-contracts';
+import AdminAllUsers from './components/admin-allusers/admin-allusers';
 
 import useStyles from './styles.js';
 
@@ -22,13 +26,13 @@ const App = () => {
     const classes = useStyles();
     const currentUser = JSON.parse(localStorage.getItem('profile'));
     const [user, setUser] = useState(currentUser);
-    const history = useHistory();
+    const [contracts, setContracts] = useState();
     const [currentId, setCurrentId] = useState(null);
     const [search, setSearch] = useState('');
     const [tags, setTags] = useState([]);
 
     const dispatch = useDispatch();
-    
+
     const searchPost = (e) => {
         if (search.trim() || tags) {
             dispatch(getPostsBySearch({ search, tags: tags.join(',') })); // [tagOne, tagTwo] = 'tagOne,tagTwo'
@@ -53,44 +57,45 @@ const App = () => {
 
     const handleDelete = (tagToDelete) => setTags(tags.filter((tag) => tag !== tagToDelete ));
 
+    useEffect(() => {
+        dispatch(getContracts())
+    }, [contracts])
+
     return (  
         <Router>
             <Container className={classes.root} maxWidth="xl">
                 <Navbar />
                 <AuthProvider>
-                    <Switch>
-                        <Route path="/" exact component={() => <Redirect to="/posts" />} />
-                        <Route path="/posts" render={() => 
-                            <Home setCurrentId={setCurrentId} 
-                            setUser={setUser} 
-                            handleKeyPress={handleKeyPress} 
-                            search={search} 
-                            setSearch={setSearch} 
-                            handleAdd={handleAdd} 
-                            handleDelete={handleDelete} 
-                            tags={tags} 
-                            searchPost={searchPost} 
-                            />} 
-                            />
-                        <Route path="/postSearch/search" render={() => <SearchResults currentId={currentId} setCurrentId={setCurrentId} setUser={setUser} />} />
-                        <Route path="/postDetails/:id" render={() => <PostPage currentId={currentId} setCurrentId={setCurrentId} />} />
-                        <Route path="/auth" exact component={Authentication} />
-                        <Route path="/contact-us" exact component={ContactUs} />
+                <Switch>
+                    <Route path="/" exact component={() => <Redirect to="/posts" />} />
+                    <Route path="/posts" render={() => 
+                        <Home setCurrentId={setCurrentId} 
+                        setUser={setUser} 
+                        handleKeyPress={handleKeyPress} 
+                        search={search} 
+                        setSearch={setSearch} 
+                        handleAdd={handleAdd} 
+                        handleDelete={handleDelete} 
+                        tags={tags} 
+                        searchPost={searchPost} 
+                        />} 
+                        />
+                    <Route path="/postSearch/search" render={() => <SearchResults currentId={currentId} setCurrentId={setCurrentId} setUser={setUser} />} />
+                    <Route path="/postDetails/:id" render={() => <PostPage currentId={currentId} setCurrentId={setCurrentId} />} />
+                    <Route path="/auth" exact component={Authentication} />
+                    <Route path="/contact-us" exact component={ContactUs} />
                         <Route path="/chat" render={() => <ChatPage setCurrentId={setCurrentId} setUser={setUser} />} />
                         <Route path="/chat-room" exact component={ChatRoom} />
-                        <Route path="/contract" render={() => <ContractPage currentId={currentId} setCurrentId={setCurrentId} />} />}
-                        <Route path="/add" render={() => <Project currentId={currentId} setCurrentId={setCurrentId} />} />
-                        <Route path="/edit/:id" render={() => <Project currentId={currentId} setCurrentId={setCurrentId} />} />
-                    </Switch>
+                    <Route path="/contract" render={() => <ContractPage currentId={currentId} setCurrentId={setCurrentId} />} />
+                    <Route path="/add" render={() => <Project currentId={currentId} setCurrentId={setCurrentId} />} />
+                    <Route path="/edit/:id" render={() => <Project currentId={currentId} setCurrentId={setCurrentId} />} />
+                    
+                    <Route path="/admin-landing" render={() => <AdminLanding />} />
+                    <Route path="/view-contracts" render={() => <AdminContracts />} />
+                    <Route path="/view-users" render={() => <AdminAllUsers />} />
+                </Switch>
                 </AuthProvider>
             </Container>
-            {/* 
-            Note To Self (Or anyone reading this: if you leave the og 
-            components in here while using them in <Route .../>, your
-            app will not work. So just comment them out, or delete them.)
-                <Home />
-                <Footer /> 
-            */} 
         </Router>
     );
 }

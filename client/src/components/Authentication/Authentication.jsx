@@ -61,7 +61,7 @@ const Authentication = () => {
     
     }
 
-    const googleFailure = () => alert("Google Sign In was unsuccessful. Try again later.");
+    const googleFailure = () => alert("Incorrect credentials. Try again");
 
     return (
         <Container component="main" maxWidth="xs">
@@ -86,17 +86,21 @@ const Authentication = () => {
                     <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
                         {isSignUp ? 'Sign Up' : 'Sign In'} {/* calls handleSubmit */}
                     </Button>
-                    <GoogleLogin 
-                        clientId="731943836145-a82js6fm10mhu33pm681dp16h5ufifgj.apps.googleusercontent.com"
-                        render={(renderProps) => (
-                            <Button className={classes.googleButton} color="primary" fullWidth onClick={renderProps.onClick} disabled={renderProps.disabled} startIcon={<Icon />} variant="contained">
-                                Google Sign In
-                            </Button>
-                        )}
-                        onSuccess={googleSuccess}
-                        onFailure={googleFailure}
-                        cookiePolicy="single_host_origin"
-                    />
+                    { !isSignUp && 
+                        <>
+                            <GoogleLogin 
+                                clientId="731943836145-a82js6fm10mhu33pm681dp16h5ufifgj.apps.googleusercontent.com"
+                                render={(renderProps) => (
+                                    <Button className={classes.googleButton} color="primary" fullWidth onClick={renderProps.onClick} disabled={renderProps.disabled} startIcon={<Icon />} variant="contained">
+                                        Google Sign In
+                                    </Button>
+                                )}
+                                onSuccess={googleSuccess}
+                                onFailure={googleFailure}
+                                cookiePolicy="single_host_origin"
+                            />
+                        </>
+                    }
                     <Grid container justify="center">
                         <Grid item>
                             <Button fullWidth onClick={switchMode}>

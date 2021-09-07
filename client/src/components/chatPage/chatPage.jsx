@@ -12,10 +12,6 @@ const ChatPage = ({ setCurrentId, setUser }) => {
     const classes = useStyles();
     const history = useHistory();
 
-    const handleClick = () => {
-        history.push('/chat-room');
-    }
-
     return (
         <Grow in>
             <Container maxWidth="xl">

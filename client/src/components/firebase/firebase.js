@@ -7,5 +7,5 @@ export const auth = firebase.initializeApp ({
     projectId: "facebookchatclone",
     storageBucket: "facebookchatclone.appspot.com",
     messagingSenderId: "19276820953",
-    appId: "1:19276820953:web:8461f9a95998ede09169c8"
+    appId: "1:19276820953:web:6ee67744ce48e7019169c8"
 }).auth();

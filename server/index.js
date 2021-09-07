@@ -5,7 +5,9 @@ import postSearchRoute from './routes/postSearch.js';
 import postDetailsRoute from './routes/postDetails.js';
 import postRoutes from './routes/posts.js';
 import userRoutes from './routes/users.js';
+import allUsersRoutes from './routes/allUsers.js';
 import dotenv from 'dotenv';
+
 dotenv.config();
 
 var app = express(); // First need to instantiate the app with express
@@ -20,6 +22,7 @@ app.use('/postSearch', postSearchRoute);
 app.use('/postDetails', postDetailsRoute);
 app.use('/posts', postRoutes); 
 app.use('/user', userRoutes);
+app.use('/allUsers', allUsersRoutes);
 
 app.get('/', (req, res) => {
     res.send('Construction Ecommerce API - App Is Running');

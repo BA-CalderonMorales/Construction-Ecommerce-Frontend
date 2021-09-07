@@ -1,6 +1,11 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
+  root: {
+    '.& MuiToolbar': {
+      padding: '0'
+    }
+  },
   navSection: {
     backgroundColor: "#826754",
   },
@@ -74,7 +79,10 @@ export default makeStyles((theme) => ({
     textAlign: 'center'
   },
   avatar: {
-    marginRight: '1rem'
+    marginRight: '.5rem',
+    width: 'auto',
+    color: 'whitesmoke',
+    backgroundColor: '#826754'
   },
   button: {
     color: 'whitesmoke'

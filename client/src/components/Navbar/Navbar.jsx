@@ -10,7 +10,7 @@ import decode from 'jwt-decode';
 const Navbar = () => {
     const classes = useStyles();
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
-    
+
     const dispatch = useDispatch();
     const history = useHistory(); 
     const location = useLocation();
@@ -26,6 +26,18 @@ const Navbar = () => {
     
     const goToContract = () => {
         history.push('/contract');
+    }
+
+    const goToAdminLogin = () => {
+        history.push('/admin-landing');
+    }
+
+    const adminContracts = () => {
+        history.push('/view-contracts');
+    }
+
+    const viewUsers = () => {
+        history.push('view-users');
     }
     
     const logout = () => {
@@ -61,16 +73,33 @@ const Navbar = () => {
                 <Toolbar className={classes.toolbar}>
                     {user ? (
                         <>
-                            <div className={classes.toolbar}>
-                                <Avatar className={classes.avatar} alt={user.result.name} src={user.result.imageUrl}>{user.result.name.charAt(0)}</Avatar>
-                                <Typography className={classes.userName} variant="h6">{user.result.name}</Typography>
-                            </div>
-                            <ButtonGroup variant="text" aria-label="text button group">
-                                <Button className={classes.button} onClick={goToContact}>Contact Us</Button>
-                                <Button className={classes.button} onClick={goToPosts}>Projects</Button>
-                                <Button className={classes.button} onClick={goToContract}>Contract Us</Button>
-                                <Button className={classes.button} onClick={logout}>Logout</Button>
-                            </ButtonGroup>
+                            {user?.result?.name ? 
+                                <>
+                                    <div className={classes.toolbar}>
+                                        <Avatar className={classes.avatar} alt={user.result.name} src={user.result.imageUrl}>{user.result.name.charAt(0)}</Avatar>
+                                        <Typography className={classes.userName} variant="h6">{user.result.name}</Typography>
+                                    </div>
+                                    <ButtonGroup variant="text" aria-label="text button group">
+                                        <Button className={classes.button} onClick={goToContact}>Contact Us</Button>
+                                        <Button className={classes.button} onClick={goToPosts}>Projects</Button>
+                                        <Button className={classes.button} onClick={goToContract}>Contract Us</Button>
+                                        <Button className={classes.button} onClick={logout}>Logout</Button>
+                                    </ButtonGroup>
+                                </>
+                            : 
+                            <>
+                                <div className={classes.toolbar}>
+                                    <Typography className={classes.avatar} alt={user.firstName}>Hello, {user.firstName}</Typography>
+                                    <Typography className={classes.userName} variant="h6">{user.name}</Typography>
+                                </div>
+                                <ButtonGroup variant="text" aria-label="text button group">
+                                    <Button className={classes.button} onClick={viewUsers}>View Users</Button>
+                                    <Button className={classes.button} onClick={adminContracts}>Contracts</Button>
+                                    <Button className={classes.button} onClick={goToPosts}>Projects</Button>
+                                    <Button className={classes.button} onClick={logout}>Logout</Button>
+                                </ButtonGroup>
+                            </>
+                            }
                         </>
                     ) 
                     : (
@@ -78,6 +107,7 @@ const Navbar = () => {
                             <Button className={classes.button} onClick={goToContact}>Contact Us</Button>
                             <Button className={classes.button} onClick={goToPosts}>Projects</Button>
                             <Button className={classes.button} onClick={goToContract}>Contract Us</Button>
+                            <Button className={classes.button} onClick={goToAdminLogin}>Administration</Button>
                             <Button className={classes.button} onClick={login}>Sign In</Button>
                         </ButtonGroup>
                     )}
