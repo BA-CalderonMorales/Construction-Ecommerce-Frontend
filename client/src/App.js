@@ -19,6 +19,7 @@ import ChatRoom from './components/chatRoom/chatRoom';
 import AdminLanding from './components/admin-landing/admin-landing';
 import AdminContracts from './components/admin-contracts/admin-contracts';
 import AdminAllUsers from './components/admin-allusers/admin-allusers';
+import Footer from './components/webapp-footer/webapp-footer';
 
 import useStyles from './styles.js';
 
@@ -93,6 +94,7 @@ const App = () => {
                     <Route path="/admin-landing" render={() => <AdminLanding />} />
                     <Route path="/view-contracts" render={() => <AdminContracts />} />
                     <Route path="/view-users" render={() => <AdminAllUsers />} />
+                    <Route path="/posts" exact component={Footer} />
                 </Switch>
                 </AuthProvider>
             </Container>

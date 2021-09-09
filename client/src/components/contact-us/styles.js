@@ -21,5 +21,6 @@ export default makeStyles ((theme) => ({
             margin: '3px',
             backgroundColor: '#f1f2f6'
         },
+        backgroundColor: '#E6E8E6'
     }
 }));

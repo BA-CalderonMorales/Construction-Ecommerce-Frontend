@@ -20,6 +20,7 @@ export default makeStyles((theme) => ({
         '& .MuiTextField-root': {
         backgroundColor: '#f1f2f6'
         },
+        backgroundColor: '#E6E8E6'
     },
     anonUser: {
         padding: theme.spacing(2 ),

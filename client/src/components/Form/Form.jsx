@@ -75,11 +75,11 @@ const Form = ({ currentId, setCurrentId }) => {
                     <Grid container>
                         <Grid item xs={12} sm={12} md={8} lg={6} xl={4}>
                             <InputLabel>Project Title</InputLabel>
-                            <TextField name="title" variant="outlined" label="Enter a Project Title" fullWidth value={postData.title} onChange={handleChange} />
+                            <TextField name="title" variant="standard" label="Enter a Project Title" fullWidth value={postData.title} onChange={handleChange} />
                             <InputLabel>Description</InputLabel>
-                            <TextField name="message" variant="outlined" label="Describe how we did here!" fullWidth multiline rows={4} value={postData.message} onChange={handleChange} />
+                            <TextField name="message" variant="standard" label="Describe how we did here!" fullWidth multiline rows={4} value={postData.message} onChange={handleChange} />
                             <InputLabel>Project Title</InputLabel>
-                            <TextField name="tags" variant="outlined" label="#tags (comma,separated)" fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })} />
+                            <TextField name="tags" variant="standard" label="#tags (comma,separated)" fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })} />
                             <div className={classes.fileInput}>
                                 <FileBase className={classes.chooseFile} type="file" multiple={false} onDone={({base64}) => setPostData({ ...postData, selectedFile: base64 })} />
                                 <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>

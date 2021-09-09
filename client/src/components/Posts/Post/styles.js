@@ -1,9 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-export default makeStyles({
+export default makeStyles((theme) => ({
     media: {
         height: 0,
-        paddingTop: '56.25%',
+        paddingTop: '55%',
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
         backgroundBlendMode: 'darken',
     },
@@ -16,11 +16,30 @@ export default makeStyles({
     card: {
         display: 'flex',
         flexDirection: 'column',
+        alignItems: 'center',
         justifyContent: 'space-between',
-        borderRadius: '15px',
-        height: '100%',
+        borderRadius: '5px',
         position: 'relative',
-        backgroundColor: '#C7D9B7'
+        backgroundColor: '#FFFFFC',
+        '&:hover': {
+            height: '100%'
+        },
+        [theme.breakpoints.down('lg')]: {
+            transition: 'all linear .5s',
+            height: '15rem'  
+        },
+        [theme.breakpoints.down('md')]: {
+            transition: 'all linear .25s',
+            height: '25rem'  
+        },
+        [theme.breakpoints.down('sm')]: {
+            transition: 'all linear .05s',
+            height: '34rem'  
+        },
+        [theme.breakpoints.down('xs')]: {
+            height: '100%'  
+        }
+
     },
     overlay: {
         position: 'absolute',
@@ -39,19 +58,19 @@ export default makeStyles({
     },
     details: {
         display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         margin: '20px',
     },
     title: {    
         padding: '0 16px',
     },
     cardActions: {
-        padding: '0 16px 8px 16px',
+        padding: '0 10px 8px 10px',
         display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
     },
     cardAction: {
         display: 'block',
-        textAlign: 'initial',
+        textAlign: 'center',
     },
-});
+}));

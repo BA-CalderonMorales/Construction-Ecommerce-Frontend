@@ -1,11 +1,13 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
+
 import postSearchRoute from './routes/postSearch.js';
 import postDetailsRoute from './routes/postDetails.js';
 import postRoutes from './routes/posts.js';
 import userRoutes from './routes/users.js';
 import allUsersRoutes from './routes/allUsers.js';
+
 import dotenv from 'dotenv';
 
 dotenv.config();

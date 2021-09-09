@@ -41,7 +41,7 @@ const Admin = () => {
 
     return (
         <Container component="main" maxWidth="xs">
-            <Paper className={classes.paper} elevation={3}> {/* Makes a white div that allows you to place things in. Super tidy */}
+            <Paper className={classes.paper} elevation={3}> 
                 <Avatar className={classes.avatar}>
                     <LockOutlinedIcon />
                 </Avatar>

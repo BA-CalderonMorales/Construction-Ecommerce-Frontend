@@ -15,32 +15,33 @@ const initialValues = {
     reply_to: '' // Customer Email
 }
 
-const notify = () => toast("Your Message Was Sent Successfully");
-const error = () => toast("Sorry! Please attempt to send that again.");
+// const notify = () => toast("Your Message Was Sent Successfully");
+// const error = () => toast("Sorry! Please attempt to send that again.");
 
-const Sent = () => {
-    return (
-        <>
-            {notify()}
-            <ToastContainer />
-        </>
-    );
-}
+// const Sent = () => {
+//     return (
+//         <>
+//             {notify()}
+//             <ToastContainer />
+//         </>
+//     );
+// }
 
-const SendAgain = () => {
-    return (
-        <>
-            {error()}
-            <ToastContainer />
-        </>
-    );
-}
+// const SendAgain = () => {
+//     return (
+//         <>
+//             {error()}
+//             <ToastContainer />
+//         </>
+//     );
+// }
 
 const ContactUs = () => {
     const history = useHistory();
     const SERVICE_ID = "service_nfoek1q";
     const TEMPLATE_ID = "template_19dcnn5";
     const USER_ID = "user_JpUTsDg4jWeu1DG3BXoSW";
+
     const [values, setValues] = useState(initialValues);
     const classes = useStyle();
     const [result, showResult] = useState(false);
@@ -95,11 +96,11 @@ const ContactUs = () => {
                             </Grid>
                             <Grid item xs={12} sm={12} md={8} lg={6} xl={4}>
                                 <InputLabel>Name</InputLabel>
-                                <TextField onChange={handleChange} variant="outlined" name="from_name" label="Full Name" value={values.from_name}></TextField>
+                                <TextField onChange={handleChange} name="from_name" label="Full Name" value={values.from_name}></TextField>
                                 <InputLabel>Email</InputLabel>
-                                <TextField onChange={handleChange} variant="outlined" name="reply_to" label="Email" value={values.reply_to}></TextField>
+                                <TextField onChange={handleChange} name="reply_to" label="Email" value={values.reply_to}></TextField>
                                 <InputLabel>Message</InputLabel>
-                                <TextField onChange={handleChange} variant="outlined" name="message" label="Message" value={values.message} multiline rows={5}></TextField>
+                                <TextField onChange={handleChange} name="message" label="Message" value={values.message} multiline rows={5}></TextField>
                                 <Button type="submit" variant="contained" color="primary">Send Email</Button>
                                 <Button type="button" variant="contained" color="secondary" onClick={sendToChat}>Can't Wait?</Button>
                             </Grid>

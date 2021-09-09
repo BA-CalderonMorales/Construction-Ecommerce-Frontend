@@ -28,10 +28,9 @@ const ViewContracts = ({ columns, contracts }) => {
     }, [contracts])
 
     const handleNewRowCreation = (newRow) => {
-        setData([
-            {...newRow},
-            ...data
-        ])
+        let tempData = data;
+        tempData.push(newRow);
+        setData(tempData)
     }
 
     return (

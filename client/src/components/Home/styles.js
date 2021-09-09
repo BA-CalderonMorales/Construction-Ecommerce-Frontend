@@ -4,13 +4,13 @@ export default makeStyles ((theme) => ({
     root: {
         '& .MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-12': {
             textAlign: 'center'
-        }
+        },
     },
     searchBar: {
-        margin: '2rem',
+        alignItems: 'center',
     },
     gridContainer: {
-        marginTop: '5rem',
+        marginTop: '3rem',
         marginBottom: '1rem',
         textAlign: 'center',
         [theme.breakpoints.down('xs')]: {

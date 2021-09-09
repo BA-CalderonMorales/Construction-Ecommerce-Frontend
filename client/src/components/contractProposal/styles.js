@@ -15,11 +15,12 @@ export default makeStyles ((theme) => ({
             justifyContent: 'center',
             alignContent: 'center',
             textAlign: 'center',
-            padding: '2rem'
+            padding: '1rem'
         },
         '& .MuiTextField-root': {
             margin: '3px',
             backgroundColor: '#f1f2f6'
         },
+        backgroundColor: '#E6E8E6'
     }
 }));

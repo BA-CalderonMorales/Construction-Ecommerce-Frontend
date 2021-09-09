@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Paper, Container, Grid, TextField, Divider, Typography, Button, InputLabel } from '@material-ui/core';
+import { Paper, Container, Grid, TextField, Divider, Typography, Button, InputLabel, InputAdornment } from '@material-ui/core';
 import useStyle from './styles.js';
 import FileBase from 'react-file-base64';
 
@@ -56,7 +56,7 @@ const ContractProposal = () => {
     }
     const workType = "Plumbing, Framing, Concrete..."
     const message = "Please provide a detailed description."
-    const priceProposal = "(i.e. 30, 200, 5, no '$' symbols)"
+    const priceProposal = "(i.e. 30, 200, 499...)"
     const locationText = "Press \"Get Location\" to help.";
     
     return (
@@ -75,23 +75,23 @@ const ContractProposal = () => {
                             </Grid>
                             <Grid item xs={12} sm={12} md={8} lg={6} xl={4}>
                                 <InputLabel>Work Type</InputLabel>
-                                <TextField onChange={handleChange} variant="outlined" name="typeOfWork" label={workType} value={values.TypeOfWork}></TextField>
-                                <InputLabel>Price Proposal</InputLabel>
-                                <TextField onChange={handleChange} variant="outlined" name="customerPriceProposal" label={priceProposal} value={values.CustomerPriceProposal}></TextField>
+                                <TextField onChange={handleChange} variant="standard" name="typeOfWork" label={workType} value={values.TypeOfWork}></TextField>
+                                <InputLabel htmlFor="standard-adornment-amount">Price Proposal</InputLabel>
+                                <TextField id="standard-adornment-amount" startAdornment={<InputAdornment position="start">$</InputAdornment>} onChange={handleChange} variant="standard" name="customerPriceProposal" label={priceProposal} value={values.CustomerPriceProposal}></TextField>
                                 <InputLabel>Description</InputLabel>
-                                <TextField onChange={handleChange} variant="outlined" name="descriptionOfProject" label={message} value={values.DescriptionOfProject} multiline rows={5}></TextField>
+                                <TextField onChange={handleChange} variant="standard" name="descriptionOfProject" label={message} value={values.DescriptionOfProject} multiline rows={5}></TextField>
                                 <InputLabel>Location</InputLabel>
-                                <TextField onChange={handleChange} variant="outlined" name="location" label={locationText} value={values.Location}></TextField>
+                                <TextField onChange={handleChange} variant="standard" name="location" label={locationText} value={values.Location}></TextField>
                                 {/* Future iterations will allow a customer to just click on the geolocation on the map and autopopulate the necessary info for location */}
                                 <Button type="button" variant="text" color="secondary" onClick={getLocation}>Get Location</Button>
                                 <FileBase className={classes.chooseFile} type="file" multiple={false} onDone={({base64}) => setValues({ ...values, image: base64 })} />
+                                <Button type="submit" variant="contained" color="primary">Send Proposal</Button>
                                 {clicked && (
                                     <>
                                         {/* https://developers.google.com/maps/documentation/javascript/examples/event-click-latlng */}
                                         <Map />
                                     </>
                                 )}
-                                <Button type="submit" variant="contained" color="primary">Send Proposal</Button>
                             </Grid>
                         </Grid>
                     </form>

@@ -10,9 +10,14 @@ export default makeStyles ((theme) => ({
             paddingRight: 0
         },
         '& .MuiAppBar-root': {
-            padding: 1
+            padding: 1,
         },
-        
+        backgroundColor: '#E6E8E6'
+    },
+    [theme.breakpoints.down('sm')]: {
+        root: {
+            fontSize: '20px'
+        }
     },
     mainContainer: {
         minWidth: "380px"

@@ -13,27 +13,32 @@ const SearchBar = ({ handleKeyPress, search, setSearch, handleAdd, handleDelete,
     }
     
     return (
-        <>            
-            <Grid container className={classes.searchBar} alignItems="center" justifyContent="center" spacing={1}>
-                <Grid item xs={12} sm={4} md={5} lg={5} >
-                    <TextField onKeyDown={handleKeyPress} fullWidth name="search" variant="outlined" label="Search Projects" value={search} onChange={(e) => setSearch(e.target.value)} />
-                </Grid>
-                <Grid item xs={12} sm={3} lg={5}>
-                    <ChipInput 
-                        fullWidth
-                        style={{ margin: '1rem 0' }}
-                        value={tags}
-                        onAdd={(chip) => handleAdd(chip)}
-                        onDelete={(chip) => handleDelete(chip)}
-                        label="Search Tags"
-                        variant="outlined"
+        <>  
+            <Grid item xs={12} sm={8} md={10} lg={10} >
+                <TextField 
+                    className={classes.textField}
+                    autofocus
+                    autoComplete={true}
+                    onKeyDown={handleKeyPress} 
+                    fullWidth 
+                    name="search" 
+                    value={search} 
+                    onChange={(e) => setSearch(e.target.value)} 
+                    label="Search Projects" 
+                     />
+                <ChipInput 
+                    className={classes.textField}
+                    fullWidth
+                    value={tags}
+                    onAdd={(chip) => handleAdd(chip)}
+                    onDelete={(chip) => handleDelete(chip)}
+                    label="Search Tags"
                     />
-                </Grid>
-                <Grid item xs={12} sm={2} md={3} lg={2} className={classes.searchButton}>
-                    <Button onClick={searchPost} focusVisible><i className="fas fa-search fa-2x"></i></Button>
-                    <Button onClick={addProject} focusVisible>Add a Project</Button>
-                </Grid>
             </Grid>
+            <Grid item xs={12} sm={4} md={2} lg={2} className={classes.searchButton}>
+                <Button onClick={searchPost} focusVisible><i className="fas fa-search fa-2x"></i></Button>
+                <Button onClick={addProject} focusVisible>Add a Project</Button>
+            </Grid>     
         </>
     )
 }
