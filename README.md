@@ -2,6 +2,17 @@
 
 <h2>MERN + ASP.Net Core Entity Framework</h2>
 
+<h3>Status: Finished with mvp for now. Will update as time goes by. (9/11/2021</h3>
+<p>
+Here are some images of the current version of the ecommerce site that I built. Still a work in progress, but I'm very proud of what it's looking like so far. 
+<img src="https://user-images.githubusercontent.com/62074841/132971716-cddfd0ac-8188-409b-bf3c-9acd41d634bf.png" />
+<img src="https://user-images.githubusercontent.com/62074841/132971726-9ff5eed9-57e4-4c9d-8d96-fe3768a88efa.png" />
+<img src="https://user-images.githubusercontent.com/62074841/132971739-20f0d26c-0064-4a28-bd2d-0c70945808be.png" />
+<img src="https://user-images.githubusercontent.com/62074841/132971771-707caede-816a-465e-b417-bbf4a00f0d31.png" />
+<img src="https://user-images.githubusercontent.com/62074841/132971780-a616b8a0-3342-4e24-9883-fa4b75caf8bc.png" />
+
+</p>
+
 <h3>Status: I'll be posting snippets of the final product as soon as I get done with my Demo day. (9/3/2021) </h3>
 <p>
 If you're just browsing my code, just know that this is one of those projects that I placed my blood, sweat, and 
