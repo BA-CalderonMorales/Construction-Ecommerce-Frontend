@@ -33,19 +33,19 @@
 <br />
 <p align="center">
   <a href="https://github.com/BA-CalderonMorales/Construction-Ecommerce-Frontend">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://user-images.githubusercontent.com/62074841/133473191-6e1c7ef4-1fca-437c-89c5-828feb525872.png" alt="Logo" width="150" height="80">
   </a>
 
-  <h3 align="center">project_title</h3>
+  <h3 align="center">Mares Construction - Ecommerce Project</h3>
 
   <p align="center">
-    project_description
+    An ecommerce project that I built during a 10-day coding spring while a student at DevCodeCamp.
     <br />
     <a href="https://github.com/BA-CalderonMorales/Construction-Ecommerce-Frontend"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/BA-CalderonMorales/Construction-Ecommerce-Frontend">View Demo</a>
-    ·
+<!--     <a href="https://github.com/BA-CalderonMorales/Construction-Ecommerce-Frontend">View Demo</a>
+    · -->
     <a href="https://github.com/BA-CalderonMorales/Construction-Ecommerce-Frontend/issues">Report Bug</a>
     ·
     <a href="https://github.com/BA-CalderonMorales/Construction-Ecommerce-Frontend/issues">Request Feature</a>
@@ -85,15 +85,16 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]]!
 
-Here's a blank template to get started:
+
+<!-- Here's a blank template to get started:
 **To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`BA-CalderonMorales`, `Construction-Ecommerce-Frontend`, `twitter_handle`, `email`, `project_title`, `project_description`
+`BA-CalderonMorales`, `Construction-Ecommerce-Frontend`, `twitter_handle`, `email`, `project_title`, `project_description` -->
 
 
 ### Built With
-
+<div id="built-with"></div>
 * []()
 * []()
 * []()
