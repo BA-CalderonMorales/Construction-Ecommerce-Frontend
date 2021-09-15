@@ -31,7 +31,7 @@
 
 <!-- PROJECT LOGO -->
 <br />
-<p align="center">
+<p id="top" align="center">
   <a href="https://github.com/BA-CalderonMorales/Construction-Ecommerce-Frontend">
     <img src="https://user-images.githubusercontent.com/62074841/133473191-6e1c7ef4-1fca-437c-89c5-828feb525872.png" alt="Logo" width="150" height="80">
   </a>
@@ -96,6 +96,8 @@
  that highlights what some of the key features were with regarding this specific, ecommerce application.
 </p>
 
+<div id="demo"></div>
+
 [![Watch the video](https://img.shields.io/badge/MyChannel-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/SLPg8KAHNIw)
 <!-- Here's a blank template to get started:
 **To avoid retyping too much info. Do a search and replace with your text editor for the following:**
@@ -159,7 +161,7 @@ To get a local copy up and running follow these simple steps.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Please review the demo link in the About description for usage behind the actual web application.
+Please review the demo <a href="#demo">link</a> in the About description for usage behind the actual web application.
 
 
 <!-- ROADMAP -->
@@ -205,3 +207,5 @@ Backend: [Construction Ecommerce Backend](https://github.com/BA-CalderonMorales/
 * My Family
 * All the wonderful (and free) resources I found on the internet.
 * JavaScript Mastery (YouTube channel)
+
+<a href="#top">Back To Top</a>
