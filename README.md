@@ -85,7 +85,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img href="https://user-images.githubusercontent.com/62074841/133490662-1c50786a-094e-4a9f-9eb9-d02b777256f2.png" />
+![image](https://user-images.githubusercontent.com/62074841/133553190-8c144cd8-54b0-4ce3-8ee4-80299ea70f98.png)
+
 <p>
  I built this during a 10-day coding sprint while still a student at DevCodeCamp. It was an eye-opening experience having
  to code this bad boy out during that short amount of time, but I'm really proud of the end-product. It's meant to be a web 
